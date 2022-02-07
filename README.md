@@ -67,7 +67,7 @@ Staged files in Git get automatically formatted with [pretty-quick](https://gith
 
 1. Select plugin in the "Project" window
 2. Do a right-click and select "Prepare Plugin Module For Deployment"
-3. Publish .jar file on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/add#intellij) 
+3. Publish .jar file on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/add#intellij)
 
 ### Resources
 
@@ -75,3 +75,5 @@ Staged files in Git get automatically formatted with [pretty-quick](https://gith
 - [Building a Plugin for WebStorm – Tutorial for JavaScript Developers](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/)
 - [Creating Your First Plugin](https://plugins.jetbrains.com/docs/intellij/getting-started.html)
 - [Publishing a Plugin](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html)
+- [Compatibility verification tool for IntelliJ Platform plugins](https://github.com/JetBrains/intellij-plugin-verifier)
+- [Build Number Ranges](https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html)

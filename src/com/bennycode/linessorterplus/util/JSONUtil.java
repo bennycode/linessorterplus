@@ -4,12 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.intellij.openapi.util.text.StringUtil;
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.stream.Collectors;
-import com.intellij.openapi.util.text.StringUtil;
 
 public final class JSONUtil {
 
