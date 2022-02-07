@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.apache.commons.lang3.StringUtils;
+import com.intellij.openapi.util.text.StringUtil;
 
 public final class JSONUtil {
 
@@ -50,7 +50,7 @@ public final class JSONUtil {
 
   public static boolean isValidJSON(List<String> lines, Charset charset) {
     try {
-      JSONUtil.getJsonFromString(StringUtils.join(lines, ""), charset);
+      JSONUtil.getJsonFromString(StringUtil.join(lines, ""), charset);
       return true;
     } catch (Exception ex) {
       return false;
