@@ -63,8 +63,15 @@ npm run fix
 
 Staged files in Git get automatically formatted with [pretty-quick](https://github.com/azz/pretty-quick).
 
+## Deployment
+
+1. Select plugin in the "Project" window
+2. Do a right-click and select "Prepare Plugin Module For Deployment"
+3. Publish .jar file on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/add#intellij) 
+
 ### Resources
 
 - [Setting Up a Development Environment﻿](https://plugins.jetbrains.com/docs/intellij/setting-up-environment.html#configuring-intellij-platform-sdk)
 - [Building a Plugin for WebStorm – Tutorial for JavaScript Developers](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/)
 - [Creating Your First Plugin](https://plugins.jetbrains.com/docs/intellij/getting-started.html)
+- [Publishing a Plugin](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html)

@@ -4,4 +4,5 @@ out/
 
 # Files
 .idea/workspace.xml
+linessorterplus.jar
 package-lock.json
