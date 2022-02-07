@@ -1,0 +1,49 @@
+<idea-plugin>
+    <id>com.bennycode.linessorterplus</id>
+    <name>Lines Sorter Plus</name>
+    <version>1.0</version>
+    <vendor email="mail@bennycode.com" url="https://twitter.com/bennycode">Benny Neugebauer</vendor>
+    <description><![CDATA[
+    <a href="https://twitter.com/bennycode">Follow the author (@bennycode)</a> | <a href="https://github.com/bennycode/linessorterplus">Code on GitHub</a> | <a href="https://sortjson.com/">Sort JSON</a>
+    <br/>
+    <br/>
+    <b>Installation</b>
+    <br/>
+    <br/>
+    Add <em>Lines Sorter Plus</em> action in <em>Edit</em> menu to sort selected lines of code or a complete file.
+    <br/>
+    <br/>
+    <b>Features</b>
+    <ul>
+    <li>It sorts selected lines</li>
+    <li>It sorts whole file if selection is empty</li>
+    <li>It sorts plaintext</li>
+    <li>It sorts JSON objects</li>
+    </ul>
+    <b>Attribution</b>
+    <ul>
+    <li>Sylvain Francois for building <a href="https://github.com/syllant/idea-plugin-linessorter">Lines Sorter</a></li>
+    </ul>
+    ]]></description>
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+    <idea-version since-build="173.0" />
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+    <actions>
+        <group id="linessorterplus.sort.group">
+            <separator />
+            <action
+        id="linessorterplus.sort"
+        class="com.bennycode.linessorterplus.SortAction"
+        text="Lines Sorter Plus"
+        description="Sort selected lines or whole file if selection is empty">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift l" />
+            </action>
+            <add-to-group group-id="EditMenu" anchor="last" />
+        </group>
+    </actions>
+</idea-plugin>
