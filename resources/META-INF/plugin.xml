@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.bennycode.linessorterplus</id>
     <name>Lines Sorter Plus</name>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
     <vendor email="mail@bennycode.com" url="https://twitter.com/bennycode">Benny Neugebauer</vendor>
     <description><![CDATA[
     <p>Adds support to alphabetically sort lines or JSON objects.</p>
@@ -18,12 +18,6 @@
     <p>The plugin is based on Sylvain Francois' Line Sorter.</p>
     <p><a href="https://github.com/bennycode/linessorterplus">Code on GitHub</a> | <a href="https://sortjson.com/">Sort JSON</a> | <a href="https://twitter.com/bennycode">Follow the author (@bennycode)</a></p>
     ]]></description>
-    <change-notes><![CDATA[
-      v1.0.1
-      <ul>
-        <li>Require IntelliJ Platform version 2020.1</li>
-      </ul>
-  ]]></change-notes>
     <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
     <idea-version since-build="201" />
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
