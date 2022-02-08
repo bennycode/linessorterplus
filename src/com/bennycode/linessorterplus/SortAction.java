@@ -12,6 +12,7 @@ import com.intellij.openapi.editor.actionSystem.EditorWriteActionHandler;
 import com.intellij.openapi.editor.actions.TextComponentEditorAction;
 import com.intellij.openapi.project.Project;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.text.MessageFormat;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
@@ -30,13 +31,21 @@ public class SortAction extends TextComponentEditorAction {
     super(new Handler());
   }
 
+  private static Charset getCharset(Project project) {
+    try {
+      return project.getProjectFile().getCharset();
+    } catch (Exception ex) {
+      return StandardCharsets.UTF_8;
+    }
+  }
+
   private static class Handler extends EditorWriteActionHandler {
 
     public void executeWriteAction(Editor editor, @Nullable Caret caret, DataContext dataContext) {
       String fileName = IDEUtil.getFileName(editor);
       final Document doc = editor.getDocument();
       Project project = editor.getProject();
-      Charset charset = project.getProjectFile().getCharset();
+      Charset charset = SortAction.getCharset(project);
 
       boolean isSelection = editor.getSelectionModel().hasSelection();
       boolean isJsonFile = fileName.endsWith(".json") ? true : false;
