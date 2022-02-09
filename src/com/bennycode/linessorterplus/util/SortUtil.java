@@ -1,7 +1,6 @@
 package com.bennycode.linessorterplus.util;
 
 import com.google.gson.JsonObject;
-import java.nio.charset.Charset;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -16,9 +15,9 @@ public class SortUtil {
     return SortUtil.joinLines(lines);
   }
 
-  public static StringBuilder sortJson(List<String> lines, Charset charset) {
+  public static StringBuilder sortJson(List<String> lines) {
     String input = StringUtils.join(lines, "");
-    JsonObject json = JSONUtil.getJsonFromString(input, charset);
+    JsonObject json = JSONUtil.getJsonFromString(input);
     JsonObject sortedJson = JSONUtil.sortJson(json);
     String sortedString = JSONUtil.getStringFromJson(sortedJson);
     return new StringBuilder(sortedString);

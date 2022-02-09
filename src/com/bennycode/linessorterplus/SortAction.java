@@ -11,8 +11,6 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.actionSystem.EditorWriteActionHandler;
 import com.intellij.openapi.editor.actions.TextComponentEditorAction;
 import com.intellij.openapi.project.Project;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.text.MessageFormat;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
@@ -31,21 +29,12 @@ public class SortAction extends TextComponentEditorAction {
     super(new Handler());
   }
 
-  private static Charset getCharset(Project project) {
-    try {
-      return project.getProjectFile().getCharset();
-    } catch (Exception ex) {
-      return StandardCharsets.UTF_8;
-    }
-  }
-
   private static class Handler extends EditorWriteActionHandler {
 
     public void executeWriteAction(Editor editor, @Nullable Caret caret, DataContext dataContext) {
       String fileName = IDEUtil.getFileName(editor);
       final Document doc = editor.getDocument();
       Project project = editor.getProject();
-      Charset charset = SortAction.getCharset(project);
 
       boolean isSelection = editor.getSelectionModel().hasSelection();
       boolean isJsonFile = fileName.endsWith(".json") ? true : false;
@@ -53,15 +42,7 @@ public class SortAction extends TextComponentEditorAction {
       final String parsingMode = isSelection ? "Selection Mode" : "File Mode";
       final String fileMode = isJsonFile ? "JSON file" : "Plaintext";
 
-      LOGGER.debug(
-        MessageFormat.format(
-          "Sorting file \"{0}\" ({3}) with charset \"{1}\" ({2}).",
-          fileName,
-          charset,
-          parsingMode,
-          fileMode
-        )
-      );
+      LOGGER.debug(MessageFormat.format("Sorting file \"{0}\" ({1}, {2}).", fileName, fileMode, parsingMode));
 
       int startLine;
       int endLine;
@@ -81,19 +62,19 @@ public class SortAction extends TextComponentEditorAction {
       endLine = IDEUtil.ignoreLastEmptyLines(doc, endLine);
 
       // Extract text as a list of lines
+      // TODO: Don't extract just lines but really take the selected characters into account, so that you can select a JSON object which starts from the same lines of code.
+      // Example: `"scripts": {` <- here it should be possible to select everything starting from the curly bracket to sort the selected chars as JSON.
       List<String> lines = IDEUtil.extractLines(doc, startLine, endLine);
 
       StringBuilder sortedText;
 
       // Sort JSON files & selections
-      if (isJsonFile == true) {
-        if (!isSelection || JSONUtil.isValidJSON(lines, charset)) {
-          LOGGER.debug("Applying JSON sorting...");
-          sortedText = SortUtil.sortJson(lines, charset);
-          String formattedJson = IDEUtil.reformatJson(sortedText.toString(), project);
-          IDEUtil.writeStringToIDE(new StringBuilder(formattedJson), doc, startLine, endLine);
-          return;
-        }
+      if (isJsonFile == true && JSONUtil.isValidJSON(lines)) {
+        LOGGER.debug("Applying JSON sorting...");
+        sortedText = SortUtil.sortJson(lines);
+        String formattedJson = IDEUtil.reformatJson(sortedText.toString(), project);
+        IDEUtil.writeStringToIDE(new StringBuilder(formattedJson), doc, startLine, endLine);
+        return;
       }
 
       // Sort regular texts

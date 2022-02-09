@@ -1,24 +1,31 @@
 <idea-plugin>
     <id>com.bennycode.linessorterplus</id>
     <name>Lines Sorter Plus</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <vendor email="mail@bennycode.com" url="https://twitter.com/bennycode">Benny Neugebauer</vendor>
     <description><![CDATA[
-    <p>Adds support to alphabetically sort lines or JSON objects.</p>
-    <h2>Usage</h2>
-    <p>Just select lines and call either "Edit" → "Lines Sorter Plus", or "Alt" + "Shift" + "L" shortcut. When no lines are selected, the whole file is sorted.</p>
-    <h2>Features</h2>
+    Adds support to alphabetically sort lines or JSON objects.
     <ul>
     <li>Sorts selected lines alphabetically</li>
     <li>Sorts whole file if selection is empty</li>
     <li>Sorts plaintext</li>
     <li>Sorts JSON objects (in JSON files)</li>
     </ul>
-    <h2>Credits</h2>
-    <p>The plugin is based on Sylvain Francois' Line Sorter.</p>
-    <p><a href="https://github.com/bennycode/linessorterplus">Code on GitHub</a> | <a href="https://sortjson.com/">Sort JSON</a> | <a href="https://twitter.com/bennycode">Follow the author (@bennycode)</a></p>
+    Just select lines and call either <b>Edit → Lines Sorter Plus</b>, or <b>Alt + Shift + L</b> shortcut. When no lines are selected, the whole file is sorted.
+    <br>
+    <br>
+    The plugin is based on Sylvain Francois' Line Sorter.
+    <br>
+    <br>
+    <a href="https://github.com/bennycode/linessorterplus">Code on GitHub</a> | <a href="https://twitter.com/bennycode">Follow the author (@bennycode)</a> | <a href="https://sortjson.com/">Sort JSON</a>
+    <br>
+    <br>
     ]]></description>
     <change-notes><![CDATA[
+      v1.0.2
+      <ul>
+        <li>Disable HTML escaping when sorting JSON</li>
+      </ul>
       v1.0.1
       <ul>
         <li>Default to "UTF-8" when file charset cannot be determined</li>

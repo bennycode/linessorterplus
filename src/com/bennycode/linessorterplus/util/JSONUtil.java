@@ -1,25 +1,16 @@
 package com.bennycode.linessorterplus.util;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import com.intellij.openapi.util.text.StringUtil;
-import java.io.ByteArrayInputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class JSONUtil {
 
-  private static final Gson gson = new Gson();
+  private static final Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 
-  public static JsonObject getJsonFromString(String input, Charset charset) {
-    byte[] bytes = input.getBytes(charset);
-    ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
-    InputStreamReader isr = new InputStreamReader(bais);
-    return JsonParser.parseReader(isr).getAsJsonObject();
+  public static JsonObject getJsonFromString(String input) {
+    return JsonParser.parseString(input).getAsJsonObject();
   }
 
   public static String getStringFromJson(JsonObject input) {
@@ -48,9 +39,9 @@ public final class JSONUtil {
     return newJson;
   }
 
-  public static boolean isValidJSON(List<String> lines, Charset charset) {
+  public static boolean isValidJSON(List<String> lines) {
     try {
-      JSONUtil.getJsonFromString(StringUtil.join(lines, ""), charset);
+      JSONUtil.getJsonFromString(StringUtil.join(lines, ""));
       return true;
     } catch (Exception ex) {
       return false;
