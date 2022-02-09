@@ -77,3 +77,4 @@ Staged files in Git get automatically formatted with [pretty-quick](https://gith
 - [Publishing a Plugin](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html)
 - [Compatibility verification tool for IntelliJ Platform plugins](https://github.com/JetBrains/intellij-plugin-verifier)
 - [Build Number Ranges](https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html)
+- [Plugin Logo Requirements](https://plugins.jetbrains.com/docs/intellij/plugin-icon-file.html#plugin-logo-requirements)

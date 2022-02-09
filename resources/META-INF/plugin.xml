@@ -11,17 +11,21 @@
     <li>Sorts plaintext</li>
     <li>Sorts JSON objects (in JSON files)</li>
     </ul>
-    Just select lines and call either <b>Edit → Lines Sorter Plus</b>, or <b>Alt + Shift + L</b> shortcut. When no lines are selected, the whole file is sorted.
+    Just select lines of code or text and call either <b>Edit → Lines Sorter Plus</b>, or <b>Alt + Shift + L</b> shortcut. When no lines are selected, the whole file is sorted.
     <br>
     <br>
-    The plugin is based on Sylvain Francois' Line Sorter.
+    The plugin is based on Sylvain Francois' Lines Sorter.
     <br>
     <br>
-    <a href="https://github.com/bennycode/linessorterplus">Code on GitHub</a> | <a href="https://twitter.com/bennycode">Follow the author (@bennycode)</a> | <a href="https://sortjson.com/">Sort JSON</a>
+    <a href="https://github.com/bennycode/linessorterplus">Code on GitHub</a> | <a href="https://twitter.com/bennycode">Follow the author (@bennycode)</a>
     <br>
     <br>
     ]]></description>
     <change-notes><![CDATA[
+      v1.1.0
+      <ul>
+        <li>New logo design</li>
+      </ul>
       v1.0.2
       <ul>
         <li>Disable HTML escaping when sorting JSON</li>
