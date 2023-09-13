@@ -32,6 +32,14 @@ When using a newer JDK (e.g. Oracle OpenJDK 17.0.1), you will run into:
 
 > com.intellij.ide.plugins.StartupAbortedException: UI initialization failed
 
+When you don't have an "[IntelliJ Platform Plugin SDK](https://plugins.jetbrains.com/docs/intellij/setting-up-theme-environment.html#add-intellij-platform-plugin-sdk)" assigned to this project, the code will fail to import from **com.intellij** or **org.jetbrains**:
+
+> java: package com.intellij.openapi.actionSystem does not exist
+
+This can be fixed by navigating to "File" - "Project Structure". You should see an "SDK" section where you have to select an "IntelliJ IDEA Community Edition" SDK. If you don't have any, click on "Add SDK" and select "IntelliJ Platform Plugin SDK" (tested with IntelliJ IDEA 2023.2.1, Community Edition):
+
+![SDK Selection](./sdk-selection.png)
+
 ### Compatibility
 
 Build and tested with:

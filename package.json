@@ -12,7 +12,7 @@
     "url": "git+https://github.com/bennycode/linessorterplus.git"
   },
   "scripts": {
-    "fix": "prettier --loglevel error \"**/*.{java,json,md,xml}\" --write",
+    "fix": "prettier --loglevel error \"**/*.{java,json,md}\" --write",
     "prepare": "husky install"
   },
   "version": "1.0.0"
