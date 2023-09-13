@@ -75,7 +75,7 @@ Staged files in Git get automatically formatted with [pretty-quick](https://gith
 
 1. Select plugin in the "Project" window
 2. Do a right-click and select "Prepare Plugin Module For Deployment"
-3. Publish .jar file on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/add#intellij)
+3. Publish .jar file on [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/add#intellij) through [Upload Update](https://plugins.jetbrains.com/plugin/18564-lines-sorter-plus/versions)
 
 ### Resources
 
