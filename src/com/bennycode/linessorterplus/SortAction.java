@@ -37,7 +37,7 @@ public class SortAction extends TextComponentEditorAction {
       Project project = editor.getProject();
 
       boolean isSelection = editor.getSelectionModel().hasSelection();
-      boolean isJsonFile = fileName.endsWith(".json") ? true : false;
+      boolean isJsonFile = fileName.matches(".*\\.json[5c]?");
 
       final String parsingMode = isSelection ? "Selection Mode" : "File Mode";
       final String fileMode = isJsonFile ? "JSON file" : "Plaintext";
