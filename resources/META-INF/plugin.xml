@@ -2,7 +2,7 @@
     <id>com.bennycode.linessorterplus</id>
     <name>Lines Sorter Plus</name>
     <version>1.1.0</version>
-    <vendor email="mail@bennycode.com" url="https://twitter.com/bennycode">Benny Neugebauer</vendor>
+    <vendor email="mail@bennycode.com" url="https://twitter.com/bennycode">Benny Code</vendor>
     <description><![CDATA[
     Adds support to alphabetically sort lines or JSON objects.
     <ul>
